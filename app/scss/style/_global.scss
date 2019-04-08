@@ -1,0 +1,66 @@
+/*
+ * GLOBAL STYLING
+ */
+
+/* Variables */
+$white: #fff;
+$strongCyan: #1ABC9C;
+$strongCyanHover: #13987D;
+$lightGrey: #F4F4F4;
+$iconGrey: #D8D8D8;
+$grey: #5B5A5A;
+$font: 'Roboto Slab', Arial,Helvetica Neue,Helvetica,sans-serif;
+
+/* Mixins */
+@mixin border-radius($radius){
+  border-radius:$radius;  
+}
+
+@mixin shadow{
+  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .35);  
+}
+
+
+/* Global style */
+
+body {
+    font-family: $font;
+    background: $lightGrey;
+}
+
+h1, h2, h3, h4 {	
+    color: $grey;	
+    font-family: $font;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.btn {
+    padding:0;
+    background: transparent;
+    
+    &:focus {
+        outline: 0;
+        box-shadow: none;
+    }
+    
+    &.icon {
+        height: 37px;	
+        width: 37px;	
+        background-color: $iconGrey;
+        border-radius: 50%;
+
+        &.active {
+          background-color: $strongCyan;  
+        }
+    }
+}
+
+svg {
+    margin: auto;
+    display: block;
+    fill: $white;
+}
+

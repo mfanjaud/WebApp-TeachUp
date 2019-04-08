@@ -1,0 +1,41 @@
+<div class="main-container">
+
+    <h1><span class="bold">Contact</span> List</h1>
+
+    <div class="btn-group">
+        <button type="button" class="btn" ng-model="isTypeView" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+            <svg width="24px" height="24px" viewBox="0 0 512 512">
+                <use xlink:href="#icon-grid"></use>
+            </svg>
+        </button>
+        <button type="button" class="btn" ng-model="isTypeView" uib-btn-checkbox btn-checkbox-true="0" btn-checkbox-false="1">
+            <svg width="24px" height="24px" viewBox="0 0 24 24">
+                <use xlink:href="#icon-list"></use>
+            </svg>
+        </button>
+    </div>
+
+    <div class="view row m-0" ng-class="{'list': isTypeView === 0, 'grid': isTypeView === 1}">
+        <div ng-repeat="user in users | limitTo: pageSize : (currentPage-1)*pageSize as filteredUsers" class="list-element" ng-class="{'col-12': isTypeView === 0, 'col-12 col-md-auto': isTypeView === 1}">
+            <img src="{{user.picture.medium}}" alt="avatar"/>
+            <div class="name-group">
+                <p>{{user.name.first}}</p>
+                <p class="last-name">{{user.name.last}}</p>
+            </div>
+            <div class="email-group">
+                <p>{{user.email}}</p>
+            </div>
+            <button type="button" class="btn icon" ng-click="open(user)">
+                <svg width="24px" height="24px" viewBox="0 0 111.577 111.577">
+                    <use xlink:href="#icon-infos"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    
+    <div class="pagination-group">
+        <ul uib-pagination total-items="users.length" ng-model="currentPage" boundary-link-numbers="true" max-size="maxSize" ng-model="currentPage" items-per-page="pageSize" class="pagination-sm" boundary-link-numbers="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;"></ul>
+    </div>
+    
+                
+</div>

@@ -1,0 +1,64 @@
+/*
+ * MENU STYLING
+ */
+
+.primary-nav {
+	position: fixed;
+	z-index: 999;
+    width: 140px;
+    top: 0;
+    bottom: 0;
+    left:0;
+    background-color: $strongCyan;
+    
+    @media (max-width: 992px) {
+        width: 130px;
+    }
+    
+    @media (max-width: 767px) {
+        width: 71px;
+    }
+    
+    .menu {
+	position: relative;
+    
+        .logo {
+            img {
+               width: 100%;
+               height: auto;
+               object-fit: contain;
+                margin-bottom: 45px;
+            }
+        }
+
+        .btn {
+            display: block;
+            margin: 0 auto;
+            height: 44px;	
+            width: 44px;
+            border-radius: 50px;
+            background: transparent;
+            
+            &:hover, &.active {
+                background-color: $strongCyanHover;
+            }
+            
+            
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

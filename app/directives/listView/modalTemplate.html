@@ -1,0 +1,36 @@
+<div>
+    <div class="modal-body">
+        <div class="infos-header">
+            <img src="{{user.picture.large}}" alt="avatar"/>
+            <div class="user-group">
+                <h2>{{user.name.first}}<br/>
+                <span class="last-name">{{user.name.last}}</span></h2>
+                <span class="mail">{{user.email}}</span>
+            </div>
+        </div>
+        <div class="infos-body">
+            <div class="info-group">
+                <h4>Birthdate</h4>
+                <p>{{user.dob.date | date:'yyyy-MM-dd'}} ({{user.dob.age}})</p>
+            </div>
+            <div class="info-group">
+                <h4>Address</h4>
+                <p>{{user.location.street}}, {{user.location.postcode}} {{user.location.city}}</p>
+            </div>
+            <div class="info-group">
+                <h4>Phone number</h4>
+                <p>{{user.phone}}</p>
+                <p>{{user.cell}}</p>
+            </div>
+            <div class="info-group">
+                <h4>Username</h4>
+                <p>{{user.login.username}}</p>
+            </div>
+            <div class="info-group">
+                <h4>Register date</h4>
+                <p>{{user.registered.date | date:'yyyy-MM-dd'}} ({{user.registered.age}})</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
